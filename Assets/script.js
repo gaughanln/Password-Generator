@@ -5,34 +5,34 @@ var generateBtn = document.querySelector("#generate");
 console.log("#generate");
 
 // GLOBAL password variable options
-var confirmLowerCase = [
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-];
+// var confirmLowerCase = [
+//   "a",
+//   "b",
+//   "c",
+//   "d",
+//   "e",
+//   "f",
+//   "g",
+//   "h",
+//   "i",
+//   "j",
+//   "k",
+//   "l",
+//   "m",
+//   "n",
+//   "o",
+//   "p",
+//   "q",
+//   "r",
+//   "s",
+//   "t",
+//   "u",
+//   "v",
+//   "w",
+//   "x",
+//   "y",
+//   "z",
+// ];
 var lowercase = [
   "a",
   "b",
@@ -90,7 +90,7 @@ var uppercase = [
   "Z",
 ];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var specialChar = ["!", "@", "#", "$", "%", "&", "?"];
+var specialchar = ["!", "@", "#", "$", "%", "&", "?"];
 
 // GLOBAL confirm variables for prompts
 var length = "";
@@ -121,14 +121,15 @@ var confirmuppercase = confirm(
 var confirmnumber = confirm(
   "Click OK if you want to include numbers in your password"
 );
-var specialChar = confirm(
+var specialchar = confirm(
   "Click OK if you want to include special characters in your password"
 );
 
 // need a console.log here
+var passwordText = [];
 
 // lowercase
-if (confirmLowerCase) {
+if (confirmlowercase) {
   passwordText = passwordText.concat(lowercase);
 }
 
@@ -144,38 +145,38 @@ if (confirmnumber) {
 
 // special character
 if (confirmspecialchar) {
-  passwordText = passwordText.concat(specialChar);
+  passwordText = passwordText.concat(specialchar);
 }
 console.log(passwordText);
 
 // If no choices are made
 if 
 (!confirmlowercase && !confirmuppercase && !confirmnumber && !confirmspecialchar) {
-  alert("You must choose a criteria");
+	alert("You must choose a criteria");
   prompt("Try again.");
 }
 
-var passwordText = [];
 
-for (var i = 0; i < enter; i++) {
+for (var i = 0; i < length; i++) {
   var Password = passwordText[Math.floor(Math.random() * passwordText.length)];
   password.push(passwordText);
 }
-
-// Get random index from array of options
-
-// var computerChoice = passwordText[index];
-
 console.log(passwordText.length);
 
-return passwordText;
 
-// function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
+
+// 	var element = document.querySelector("#password")
+// element.value = passwordFinal
+
+return passwordText;
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
