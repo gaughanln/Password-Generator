@@ -115,15 +115,22 @@ console.log(length);
 var confirmlowercase = confirm(
   "Click OK if you want to include lowecase letters in your password"
 );
+console.log(confirmlowercase)
+
 var confirmuppercase = confirm(
   "Click OK if you want to include uppercase letters in your password"
 );
+console.log(confirmuppercase)
+
 var confirmnumber = confirm(
   "Click OK if you want to include numbers in your password"
 );
+console.log(confirmnumber)
+
 var specialchar = confirm(
   "Click OK if you want to include special characters in your password"
 );
+console.log(confirmspecialchar)
 
 // need a console.log here
 var passwordText = [];
@@ -157,9 +164,9 @@ if
 }
 
 
-for (var i = 0; i < length; i++) {
-  var Password = passwordText[Math.floor(Math.random() * passwordText.length)];
-  password.push(passwordText);
+for (var i = 0; i < passwordText; i++) {
+  var password = passwordText[Math.floor(Math.random() * passwordText.length)];
+  passwordText.push(password);
 }
 console.log(passwordText.length);
 
