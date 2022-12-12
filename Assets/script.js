@@ -164,26 +164,21 @@ if
 }
 
 
-for (var i = 0; i < passwordText; i++) {
+var newPassword = "";
+for (var i = 0; i < length; i++) {
   var password = passwordText[Math.floor(Math.random() * passwordText.length)];
-  passwordText.push(password);
+  newPassword += password;
 }
-console.log(passwordText.length);
 
 
-
-var password = generatePassword();
+var password = newPassword;
 var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-// 	var element = document.querySelector("#password")
-// element.value = passwordFinal
 
 return passwordText;
 }
 
 
-
-// Add event listener to generate button
+// event listener to generate button
 generateBtn.addEventListener("click", writePassword);
