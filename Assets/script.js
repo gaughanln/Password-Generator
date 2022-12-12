@@ -99,10 +99,13 @@ var confirmuppercase;
 var confirmnumber;
 var confirmspecialchar;
 
+function writePassword() {
+
 // length prompt
 var length = prompt("Choose a length between 8-128 characters");
-if (length < 8 || length > 128);
+if (length < 8 || length > 128)
 {
+	writePassword()
   alert("Password length is either too short or too long, try again");
   prompt("Choose a length between 8-128 characters");
 }
@@ -154,21 +157,20 @@ if
 
 var passwordText = [];
 
-// Get random index from array of options
 for (var i = 0; i < enter; i++) {
   var Password = passwordText[Math.floor(Math.random() * passwordText.length)];
   password.push(passwordText);
 }
 
-console.log(passwordText.length);
+// Get random index from array of options
 
 // var computerChoice = passwordText[index];
 
+console.log(passwordText.length);
 
+return passwordText;
 
-// return passwordText;
-
-function writePassword() {
+// function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
