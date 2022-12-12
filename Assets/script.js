@@ -1,73 +1,179 @@
 // Assignment Code
 
 // what is this query selector for?
-var generateButton = document.querySelector("#generate").addEventListener("click");
-// document.querySelector("#generate").addEventListener("click");
-   
-// need to add a console.log here
+var generateBtn = document.querySelector("#generate");
+console.log("#generate");
 
-
-// password variable options
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+// GLOBAL password variable options
+var confirmLowerCase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var lowercase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var uppercase = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var specialChar = ["!", "@", "#", "$", "%", "&", "?"];
 
-// confirm variables for prompts
+// GLOBAL confirm variables for prompts
 var length = "";
 var confirmlowercase;
 var confirmuppercase;
 var confirmnumber;
 var confirmspecialchar;
 
+// length prompt
+var length = prompt("Choose a length between 8-128 characters");
+if (length < 8 || length > 128);
+{
+  alert("Password length is either too short or too long, try again");
+  prompt("Choose a length between 8-128 characters");
+}
+console.log(length);
 
-// Write password to the #password input
-function writePassword() {
-  // do we need the code below? It came already provided...
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+// confirming password paramaters
+var confirmlowercase = confirm(
+  "Click OK if you want to include lowecase letters in your password"
+);
+var confirmuppercase = confirm(
+  "Click OK if you want to include uppercase letters in your password"
+);
+var confirmnumber = confirm(
+  "Click OK if you want to include numbers in your password"
+);
+var specialChar = confirm(
+  "Click OK if you want to include special characters in your password"
+);
 
-  var length = (prompt("Choose a length between 8-128 characters"));
-    while (length <= 8 || length >= 128); 
-     {
-    alert("Password length is either too short or too long, try again");
-      var length = (prompt("Choose a length between 8-128 characters"));
-    }
-  }
-  console.log(writePassword)
 // need a console.log here
 
-    // var confirmlowercase = confirm("Click OK if you want to include lowecase letters in your password");
-    
-    
-    // else {
-    //   var confirmlowercase = confirm("Would you like to include lowercase letters?")
-    // }
-    console.log(writePassword)
+// lowercase
+if (confirmLowerCase) {
+  passwordText = passwordText.concat(lowercase);
+}
+
+// uppercase
+if (confirmuppercase) {
+  passwordText = passwordText.concat(uppercase);
+}
+
+// number
+if (confirmnumber) {
+  passwordText = passwordText.concat(number);
+}
+
+// special character
+if (confirmspecialchar) {
+  passwordText = passwordText.concat(specialChar);
+}
+console.log(passwordText);
+
+// If no choices are made
+if 
+(!confirmlowercase && !confirmuppercase && !confirmnumber && !confirmspecialchar) {
+  alert("You must choose a criteria");
+  prompt("Try again.");
+}
+
+var passwordText = [];
+
+// Get random index from array of options
+for (var i = 0; i < enter; i++) {
+  var Password = passwordText[Math.floor(Math.random() * passwordText.length)];
+  password.push(passwordText);
+}
+
+console.log(passwordText.length);
+
+// var computerChoice = passwordText[index];
 
 
-  return password;
 
+// return passwordText;
 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
- 
-
-  
   passwordText.value = password;
+}
 
-
-    
-    
-      
-
-  
 // Add event listener to generate button
-generateButton.addEventListener("click", writePassword);
-document.getElementById("#generate").addEventListener("click");
-console.log("#generate");
-
-// need prompts for : Password length, confirm whether or not to include lowercase, uppercase, numeric, and/or special characters - this is 5 total prompts
-
-// once propmpts are created input should be validated
-
-// password is displayed in an alert at the end
+generateBtn.addEventListener("click", writePassword);
