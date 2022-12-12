@@ -5,34 +5,6 @@ var generateBtn = document.querySelector("#generate");
 console.log("#generate");
 
 // GLOBAL password variable options
-// var confirmLowerCase = [
-//   "a",
-//   "b",
-//   "c",
-//   "d",
-//   "e",
-//   "f",
-//   "g",
-//   "h",
-//   "i",
-//   "j",
-//   "k",
-//   "l",
-//   "m",
-//   "n",
-//   "o",
-//   "p",
-//   "q",
-//   "r",
-//   "s",
-//   "t",
-//   "u",
-//   "v",
-//   "w",
-//   "x",
-//   "y",
-//   "z",
-// ];
 var lowercase = [
   "a",
   "b",
@@ -127,7 +99,7 @@ var confirmnumber = confirm(
 );
 console.log(confirmnumber)
 
-var specialchar = confirm(
+var confirmspecialchar = confirm(
   "Click OK if you want to include special characters in your password"
 );
 console.log(confirmspecialchar)
@@ -154,13 +126,13 @@ if (confirmnumber) {
 if (confirmspecialchar) {
   passwordText = passwordText.concat(specialchar);
 }
-console.log(passwordText);
+// console.log(passwordText);
 
 // If no choices are made
 if 
 (!confirmlowercase && !confirmuppercase && !confirmnumber && !confirmspecialchar) {
-	alert("You must choose a criteria");
-  prompt("Try again.");
+	alert("You must choose a criteria, try again");
+  writePassword();
 }
 
 
