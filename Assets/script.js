@@ -147,5 +147,14 @@ function writePassword() {
   return passwordText;
 }
 
+// function copy() {
+//   let copyText = document.querySelector("#generate");
+//   copyText.select();
+//   document.execCommand("copy");
+// }
+
+// document.querySelector("#generate").addEventListener("click", copy);
+
+
 // event listener to generate button
 generateBtn.addEventListener("click", writePassword);
